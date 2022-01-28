@@ -7,3 +7,6 @@ cd /D
 git clone http
 cd D:/1111
 ls
+git add text.txt
+git commit -m "cc"
+git push origin master 
