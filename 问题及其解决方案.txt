@@ -1,0 +1,17 @@
+本人因条件有限，只能使用windows系统来完成此作业，很多问题都是通过学长的帮助以及网上的一些基础及教程完成，因此，在解决众多问题上花费的时间和精力会较为多。但也还好，最后还是解决了。
+
+问题1.在下载编译darknet 需安装CUDA10.1以及对应版本的cuDNN opencv 再下载安装Cygwin并执行代码
+cd C:
+cd C:\\..... \\darknet-master
+make
+最终才能编译成功
+
+问题2.测试中，需要进入darknet根目录 输入
+darknet.exe detect cfg/yolov3.cfg yolov3.weights data/eagle.jpg
+
+问题3.在最终的训练中，会出现类似
+Cannot load image "COCO_train2014_000000167126.jpg";
+STB Reason: expected marker; darknet: ./src/cuda.c:36: check_error: Assertion `0' failed.)这类问题
+方案是需要用notepad++修改，将myData.names和myData_train.txt进行以下操作
+先点击视图->显示符号->显示所有字符，然后点编辑->文档格式转换->转liunx，保证每一行最后都只有一个LF，一般是最后一行的问题。
+这便是大概率会碰到的难题。
